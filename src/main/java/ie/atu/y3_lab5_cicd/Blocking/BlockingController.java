@@ -1,4 +1,4 @@
-package ie.atu.y3_lab5_cicd;
+package ie.atu.y3_lab5_cicd.Blocking;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
