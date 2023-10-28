@@ -35,4 +35,9 @@ public class FeignController {
 
         return "Total execution time: " + (endTime - startTime) + " ms";
     }
+
+    @GetMapping("/todos/2")
+    public List<TodoResponse> getTodoList() {
+        return feignService.fetchDataList();
+    }
 }
