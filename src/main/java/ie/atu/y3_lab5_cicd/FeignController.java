@@ -1,18 +1,19 @@
 package ie.atu.y3_lab5_cicd;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.CompletionException;
 
 @RestController
 public class FeignController {
 
     private final FeignService feignService;
 
+    @Autowired
     public FeignController(FeignService feignService) {
         this.feignService = feignService;
     }
@@ -36,8 +37,8 @@ public class FeignController {
         return "Total execution time: " + (endTime - startTime) + " ms";
     }
 
-    @GetMapping("/todos/2")
-    public List<TodoResponse> getTodoList() {
+    @GetMapping("/todos")
+    public TodoResponse getTodoList() {
         return feignService.fetchDataList();
     }
 }

@@ -23,9 +23,15 @@ public class FeignService {
         }
         return td;
     }
-    public ArrayList<TodoResponse> fetchDataList(){
-        ArrayList<TodoResponse> td = todoClient.fetchDataList();
-        System.out.println(td);
-        return td;
+    public TodoResponse fetchDataList(){
+        TodoResponse todoResponse = new TodoResponse();
+        ArrayList<TodoResponse> tdList = todoClient.fetchDataList();
+        System.out.println(tdList);
+        for (TodoResponse todo : tdList) {
+            if (todo.getId() == 196) {
+                break;
+            }
+        }
+        return todoResponse;
     }
 }
