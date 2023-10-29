@@ -1,4 +1,4 @@
-package ie.atu.y3_lab5_cicd;
+package ie.atu.y3_lab5_cicd.Blocking;
 
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
